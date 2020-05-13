@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">BattleClub</string>
+
+    <!--    BattleWorld -->
+
+    <string name="regSuccessMessage">Registered Successfully! Login Now.</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="sufficientBalanceText">You have sufficient balance</string>
+    <string name="insufficientBalanceText">You have insufficient balance</string>
+    <string name="upcomingIDPassText">Room ID and Password will be shown here (check before 15min of match schedule time)</string>
+    <string name="shareSub">share</string>
+    <string name="winnerchickendinner">Chicken Dinner Winner</string>
+    <string name="forceUpdateNote">Update application to New Latest Version</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

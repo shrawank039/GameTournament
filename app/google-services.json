@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "434127941681",
+    "firebase_url": "https://battleclub-7e032.firebaseio.com",
+    "project_id": "battleclub-7e032",
+    "storage_bucket": "battleclub-7e032.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:434127941681:android:1aa99f4260d069d34fe510",
+        "android_client_info": {
+          "package_name": "com.matrixdeveloper.battle.club.tournaments"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "434127941681-5tlansgvrjffuthgiogue3tacv80c2tu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.matrixdeveloper.battle.club.tournaments",
+            "certificate_hash": "4f58152a2917a380ea4ebff35047e6e61959bb94"
+          }
+        },
+        {
+          "client_id": "434127941681-7aon7cgudmmmnqlltqbuu04apdurhmbm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEzkLvSIqBj8FSa-ZkPZOUkvjER8AooRw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "434127941681-7aon7cgudmmmnqlltqbuu04apdurhmbm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
