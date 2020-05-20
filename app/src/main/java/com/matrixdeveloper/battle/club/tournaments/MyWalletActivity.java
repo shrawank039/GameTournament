@@ -251,7 +251,7 @@ public class MyWalletActivity extends AppCompatActivity implements PaytmPaymentT
              * Merchant Name
              * eg: ACME Corp || HasGeek etc.
              */
-            options.put("name", prf.getString("firstname")+ prf.getString("lastname"));
+            options.put("name", prf.getString("firstname")+" "+ prf.getString("lastname"));
             /**
              * Description can be anything
              * eg: Reference No. #123123 - This order number is passed by you for your internal reference. This is not the `razorpay_order_id`.
@@ -260,7 +260,7 @@ public class MyWalletActivity extends AppCompatActivity implements PaytmPaymentT
              */
             options.put("description", receipt);
             options.put("image", "https://s3.amazonaws.com/rzp-mobile/images/rzp.png");
-           // options.put("order_id", orderID);
+            options.put("order_id", orderID);
             options.put("currency", "INR");
             /**
              * Amount is always passed in currency subunits
@@ -295,7 +295,7 @@ public class MyWalletActivity extends AppCompatActivity implements PaytmPaymentT
 
     @Override
     public void onPaymentError(int i, String s) {
-        //  Toast.makeText(this, "Payment Failed "+s, Toast.LENGTH_SHORT).show();
+          Toast.makeText(this, "Payment Failed "+s, Toast.LENGTH_SHORT).show();
     }
     class GetChecksum extends AsyncTask<String, String, String> {
         /**
