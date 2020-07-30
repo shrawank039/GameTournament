@@ -5,16 +5,16 @@ import com.matrixdeveloper.battle.club.tournaments.BuildConfig;
 public class config {
 
     //   http://159.65.128.120/battleworld/get_all_match.php
-    public static final String main = "http://159.65.128.120";
+    public static final String main = "https://matrixdeveloper.com/";
 //    public static String mainurl = "http://www.battleworld.in/play/";
-    public static final String mainurl = "http://159.65.128.120/battleworld/";
+    public static final String mainurl = "https://matrixdeveloper.com/battleworld/";
     public static final String mainimg = mainurl + "matchimg/";
-    public static final String howtojoin = "http://159.65.128.120/?page_id=444";
+    public static final String howtojoin = "https://matrixdeveloper.com/?page_id=444";
     public static final String privacypolicy = "https://sites.google.com/view/mohmadprivacypolicy"; //"http://159.65.128.120/?page_id=3";
     public static final String paytmchecksum = mainurl + "paytm/";
     public static final String getOrderID = mainurl +"razorpay.php";
 
-    public static final String apkupdateurl = "http://159.65.128.120/battleworld/app.apk";
+    public static final String apkupdateurl = "https://matrixdeveloper.com/battleworld/app.apk";
 
     public static final String youtubechannel = "https://www.youtube.com/channel/UCMaEQ1Q9ES5970Br8oWo7jA";
 

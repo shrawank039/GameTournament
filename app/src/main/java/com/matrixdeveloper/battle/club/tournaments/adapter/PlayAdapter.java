@@ -40,7 +40,7 @@ public class PlayAdapter extends RecyclerView.Adapter<PlayAdapter.MyViewHolder> 
 
         final CardView cardView;
         final TextView fee;
-        final ImageView img;
+      //  final ImageView img;
         final Button joinBtn;
         final TextView map;
         final MaterialProgressBar materialProgressBar;
@@ -54,13 +54,14 @@ public class PlayAdapter extends RecyclerView.Adapter<PlayAdapter.MyViewHolder> 
         final TextView timedate;
         final ImageView topImage;
         final TextView type;
+        final TextView status;
         final TextView version;
 
         MyViewHolder(View view) {
             super(view);
 
             cardView = (CardView) view.findViewById(R.id.mainCard);
-            img = (ImageView) view.findViewById(R.id.img);
+           // img = (ImageView) view.findViewById(R.id.img);
             title = (TextView) view.findViewById(R.id.title);
             timedate = (TextView) view.findViewById(R.id.timedate);
             prize = (TextView) view.findViewById(R.id.winPrize);
@@ -70,6 +71,7 @@ public class PlayAdapter extends RecyclerView.Adapter<PlayAdapter.MyViewHolder> 
             size = (TextView) view.findViewById(R.id.size);
             materialProgressBar = (MaterialProgressBar) view.findViewById(R.id.progressBar);
             joinBtn = (Button) view.findViewById(R.id.joinButton);
+            status = view.findViewById(R.id.match_status);
             sponsorTextArea = (RelativeLayout) view.findViewById(R.id.sponsorTextArea);
             sponsorText = (TextView) view.findViewById(R.id.sponsorText);
             type = (TextView) view.findViewById(R.id.matchType);
@@ -89,7 +91,7 @@ public class PlayAdapter extends RecyclerView.Adapter<PlayAdapter.MyViewHolder> 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.game_item, parent, false);
+                .inflate(R.layout.recycler_view_item, parent, false);
 
         return new MyViewHolder(itemView);
     }
@@ -157,14 +159,14 @@ public class PlayAdapter extends RecyclerView.Adapter<PlayAdapter.MyViewHolder> 
         holder.version.setText(play.getVersion());
         holder.map.setText(play.getMap());
         holder.size.setText(play.getSize());
-        if (play.getImgURL().contains("png") || play.getImgURL().contains("jpg")) {
-            String img = config.mainimg + play.getImgURL();
-            Glide.with(ctx).load(img).placeholder(R.drawable.circlesmall).centerCrop().crossFade().diskCacheStrategy(DiskCacheStrategy.ALL).into(holder.img);
-        }
+//        if (play.getImgURL().contains("png") || play.getImgURL().contains("jpg")) {
+//            String img = config.mainimg + play.getImgURL();
+//            Glide.with(ctx).load(img).placeholder(R.drawable.circlesmall).centerCrop().crossFade().diskCacheStrategy(DiskCacheStrategy.ALL).into(holder.img);
+//        }
         if (play.getTopImage().contains("png") || play.getTopImage().contains("jpg")) {
-            holder.topImage.setVisibility(View.VISIBLE);
+           // holder.topImage.setVisibility(View.VISIBLE);
             String img = config.mainimg + play.getTopImage();
-            Glide.with(ctx).load(img).placeholder(R.drawable.wp).centerCrop().crossFade().diskCacheStrategy(DiskCacheStrategy.ALL).into(holder.topImage);
+            Glide.with(ctx).load(img).placeholder(R.drawable.wp).centerCrop().diskCacheStrategy(DiskCacheStrategy.ALL).into(holder.topImage);
         }
 //        holder.cardView.setOnClickListener(new View.OnClickListener() {
 //            public void onClick(View view) {
@@ -203,6 +205,8 @@ public class PlayAdapter extends RecyclerView.Adapter<PlayAdapter.MyViewHolder> 
             holder.spot.setTextColor(Color.parseColor("#ff0000"));
             holder.spot.setText("No Spots Left! Match is Full.");
             holder.joinBtn.setText("MATCH FULL");
+            holder.status.setText("close");
+            holder.status.setBackgroundResource(R.drawable.rounded_corners);
             holder.joinBtn.setTextColor(Color.parseColor("#ffffff"));
             holder.joinBtn.setBackgroundResource(R.drawable.buttonbackactive);
             holder.joinBtn.setClickable(false);
@@ -210,7 +214,10 @@ public class PlayAdapter extends RecyclerView.Adapter<PlayAdapter.MyViewHolder> 
             holder.spot.setText(play.getSpots());
         }
         if (Integer.parseInt(play.getJoin_status()) == 0 && totalPeopleJoined < play.getTotalplayer()) {
-            holder.joinBtn.setText("Join");
+            String a = "₹" + play.getWinPrize();
+            holder.joinBtn.setText(a);
+            holder.status.setText("open");
+            holder.status.setBackgroundResource(R.drawable.rounded_corners_green);
         } else if (Integer.parseInt(play.getJoin_status()) == 1 && totalPeopleJoined < play.getTotalplayer()) {
             holder.joinBtn.setText("Joinned");
             holder.joinBtn.setTextColor(Color.parseColor("#ffffff"));

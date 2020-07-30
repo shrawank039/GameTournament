@@ -11,8 +11,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.classes.purchaselogic.JSONParser;
 
+import com.matrixdeveloper.battle.club.tournaments.config.JSONParser;
 import com.matrixdeveloper.battle.club.tournaments.config.config;
 
 import org.json.JSONArray;

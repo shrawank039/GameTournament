@@ -20,9 +20,10 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.classes.purchaselogic.JSONParser;
+
 import com.facebook.shimmer.ShimmerFrameLayout;
 
+import com.matrixdeveloper.battle.club.tournaments.config.JSONParser;
 import com.matrixdeveloper.battle.club.tournaments.config.config;
 
 import org.json.JSONArray;
@@ -460,7 +461,7 @@ public class MatchDetailsActivity extends AppCompatActivity {
 
                             if (matchTopImage.contains("png") || matchTopImage.contains("jpg")) {
                                 String img = config.mainimg + matchTopImage;
-                                Glide.with(MatchDetailsActivity.this).load(img).placeholder(R.drawable.wp).centerCrop().crossFade().diskCacheStrategy(DiskCacheStrategy.ALL).into(topImage);
+                                Glide.with(MatchDetailsActivity.this).load(img).placeholder(R.drawable.wp).centerCrop().diskCacheStrategy(DiskCacheStrategy.ALL).into(topImage);
                             }
 
                             //rajan
@@ -483,7 +484,7 @@ public class MatchDetailsActivity extends AppCompatActivity {
 
                                     } else {
                                         joinButton.setText("Match Full");
-                                        joinButton.setBackgroundColor(Color.parseColor("#757575"));
+                                        joinButton.setBackgroundColor(Color.parseColor("#000000"));
                                         joinButton.setClickable(false);
                                     }
 

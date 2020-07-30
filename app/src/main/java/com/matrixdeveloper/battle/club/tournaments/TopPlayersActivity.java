@@ -10,9 +10,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.appcompat.widget.Toolbar;
 import android.widget.Toast;
-
-import com.classes.purchaselogic.JSONParser;
 import com.matrixdeveloper.battle.club.tournaments.adapter.TopPlayerAdapter;
+import com.matrixdeveloper.battle.club.tournaments.config.JSONParser;
 import com.matrixdeveloper.battle.club.tournaments.config.config;
 import com.matrixdeveloper.battle.club.tournaments.data.TopPlayer;
 

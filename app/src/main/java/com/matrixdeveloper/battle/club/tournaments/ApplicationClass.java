@@ -1,11 +1,10 @@
 package com.matrixdeveloper.battle.club.tournaments;
 
-import com.classes.purchaselogic.BaseApplication;
 import com.google.firebase.FirebaseApp;
 import com.onesignal.OneSignal;
 import com.matrixdeveloper.battle.club.tournaments.config.config;
 
-public class ApplicationClass extends BaseApplication {
+public class ApplicationClass extends BaseApp {
 
     private static final String TAG_EMAIL = "email";
 

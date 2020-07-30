@@ -14,11 +14,11 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.classes.purchaselogic.JSONParser;
 import com.facebook.shimmer.ShimmerFrameLayout;
 import com.matrixdeveloper.battle.club.tournaments.PrefManager;
 import com.matrixdeveloper.battle.club.tournaments.R;
 import com.matrixdeveloper.battle.club.tournaments.adapter.TransactionsAdapter;
+import com.matrixdeveloper.battle.club.tournaments.config.JSONParser;
 import com.matrixdeveloper.battle.club.tournaments.config.config;
 import com.matrixdeveloper.battle.club.tournaments.data.Transactions;
 

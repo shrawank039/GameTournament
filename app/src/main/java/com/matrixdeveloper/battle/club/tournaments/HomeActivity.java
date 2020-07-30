@@ -17,9 +17,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.matrixdeveloper.battle.club.tournaments.config.JSONParser;
 import com.matrixdeveloper.battle.club.tournaments.config.config;
 
-import com.classes.purchaselogic.JSONParser;
+import com.matrixdeveloper.battle.club.tournaments.fragment.BlankFragment;
 import com.matrixdeveloper.battle.club.tournaments.fragment.OngoingFragment;
 import com.matrixdeveloper.battle.club.tournaments.fragment.ResultFragment;
 import com.matrixdeveloper.battle.club.tournaments.fragment.PlayFragment;
@@ -89,7 +90,7 @@ public class HomeActivity extends AppCompatActivity {
         //off shift mode
 //        navigation.setLabelVisibilityMode(LabelVisibilityMode.LABEL_VISIBILITY_LABELED);
 
-        loadFragment(new PlayFragment());
+        loadFragment(new BlankFragment());
         navigation.setSelectedItemId(R.id.navigation_play);
 
         new OneLoadAllProducts().execute();
@@ -112,7 +113,7 @@ public class HomeActivity extends AppCompatActivity {
                     loadFragment(fragment);
                     return true;
                 case R.id.navigation_play:
-                    fragment = new PlayFragment();
+                    fragment = new BlankFragment();
                     loadFragment(fragment);
                     return true;
                 case R.id.navigation_result:

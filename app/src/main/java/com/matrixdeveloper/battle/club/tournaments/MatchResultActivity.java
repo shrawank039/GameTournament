@@ -13,8 +13,8 @@ import androidx.appcompat.widget.Toolbar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.classes.purchaselogic.JSONParser;
 import com.matrixdeveloper.battle.club.tournaments.adapter.MatchResultAdapter;
+import com.matrixdeveloper.battle.club.tournaments.config.JSONParser;
 import com.matrixdeveloper.battle.club.tournaments.config.config;
 import com.matrixdeveloper.battle.club.tournaments.data.MatchResult;
 

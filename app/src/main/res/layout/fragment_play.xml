@@ -5,33 +5,33 @@
     android:background="#f6f6f6"
     android:orientation="vertical">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+<!--    <com.google.android.material.appbar.AppBarLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">-->
 
-        <LinearLayout
-            android:id="@+id/container_toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" >
+<!--        <LinearLayout-->
+<!--            android:id="@+id/container_toolbar"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical" >-->
 
-            <include
-                android:id="@+id/toolbar"
-                layout="@layout/toolbar" />
-        </LinearLayout>
+<!--            <include-->
+<!--                android:id="@+id/toolbar"-->
+<!--                layout="@layout/toolbar" />-->
+<!--        </LinearLayout>-->
 
-        <View
-            android:id="@+id/activityseperator"
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="0dip"
-            android:layout_marginRight="0dip"
-            android:background="@color/mainblue"
-            android:visibility="gone"/>
+<!--        <View-->
+<!--            android:id="@+id/activityseperator"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="0.5dp"-->
+<!--            android:layout_alignParentTop="true"-->
+<!--            android:layout_marginLeft="0dip"-->
+<!--            android:layout_marginRight="0dip"-->
+<!--            android:background="@color/mainblue"-->
+<!--            android:visibility="gone"/>-->
 
-    </com.google.android.material.appbar.AppBarLayout>
+<!--    </com.google.android.material.appbar.AppBarLayout>-->
 
     <com.facebook.shimmer.ShimmerFrameLayout
         android:id="@+id/shimmer_view_container"
@@ -47,11 +47,14 @@
             android:layout_marginTop="7.0dip"
             android:orientation="vertical">
 
-            <include layout="@layout/shimmer_game_item" />
+            <include layout="@layout/shimmer_recycler_view_item" />
+            <include layout="@layout/shimmer_recycler_view_item" />
+            <include layout="@layout/shimmer_recycler_view_item" />
+            <include layout="@layout/shimmer_recycler_view_item" />
+            <include layout="@layout/shimmer_recycler_view_item" />
+            <include layout="@layout/shimmer_recycler_view_item" />
+            <include layout="@layout/shimmer_recycler_view_item" />
 
-            <include layout="@layout/shimmer_game_item" />
-
-            <include layout="@layout/shimmer_game_item" />
         </LinearLayout>
     </com.facebook.shimmer.ShimmerFrameLayout>
 

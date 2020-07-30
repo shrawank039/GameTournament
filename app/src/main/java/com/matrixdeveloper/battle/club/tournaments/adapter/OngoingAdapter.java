@@ -153,12 +153,12 @@ public class OngoingAdapter extends RecyclerView.Adapter<OngoingAdapter.MyViewHo
         holder.map.setText(ongoing.getMap());
         if (ongoing.getImgURL().contains("png") || ongoing.getImgURL().contains("jpg")) {
             String img = config.mainimg + ongoing.getImgURL();
-            Glide.with(ctx).load(img).placeholder(R.drawable.circlesmall).centerCrop().crossFade().diskCacheStrategy(DiskCacheStrategy.ALL).into(holder.img);
+            Glide.with(ctx).load(img).placeholder(R.drawable.circlesmall).centerCrop().diskCacheStrategy(DiskCacheStrategy.ALL).into(holder.img);
         }
         if (ongoing.getTopImage().contains("png") || ongoing.getTopImage().contains("jpg")) {
             holder.topImage.setVisibility(View.VISIBLE);
             String img = config.mainimg + ongoing.getTopImage();
-            Glide.with(ctx).load(img).placeholder(R.drawable.wp).centerCrop().crossFade().diskCacheStrategy(DiskCacheStrategy.ALL).into(holder.topImage);
+            Glide.with(ctx).load(img).placeholder(R.drawable.wp).centerCrop().diskCacheStrategy(DiskCacheStrategy.ALL).into(holder.topImage);
         }
 
         if (Integer.parseInt(ongoing.getJoin_status()) == 0) {

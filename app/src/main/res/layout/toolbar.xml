@@ -18,7 +18,7 @@
         android:layout_height="38dp"
         android:layout_gravity="left"
         android:padding="5.0dip"
-        app:srcCompat="@drawable/iconsmall"
+        app:srcCompat="@drawable/icon"
         android:contentDescription="TODO" />
 
     <TextView

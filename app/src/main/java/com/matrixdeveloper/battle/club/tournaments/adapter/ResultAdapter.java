@@ -148,12 +148,12 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.MyViewHold
         holder.map.setText(play.getMap());
         if (play.getImgURL().contains("png") || play.getImgURL().contains("jpg")) {
             String img = config.mainimg + play.getImgURL();
-            Glide.with(ctx).load(img).placeholder(R.drawable.circlesmall).centerCrop().crossFade().diskCacheStrategy(DiskCacheStrategy.ALL).into(holder.img);
+            Glide.with(ctx).load(img).placeholder(R.drawable.circlesmall).centerCrop().diskCacheStrategy(DiskCacheStrategy.ALL).into(holder.img);
         }
         if (play.getTopImage().contains("png") || play.getTopImage().contains("jpg")) {
             holder.topImage.setVisibility(View.VISIBLE);
             String img = config.mainimg + play.getTopImage();
-            Glide.with(ctx).load(img).placeholder(R.drawable.wp).centerCrop().crossFade().diskCacheStrategy(DiskCacheStrategy.ALL).into(holder.topImage);
+            Glide.with(ctx).load(img).placeholder(R.drawable.wp).centerCrop().diskCacheStrategy(DiskCacheStrategy.ALL).into(holder.topImage);
         }
         if (Integer.parseInt(play.getJoin_status()) == 0) {
             holder.joinBtn.setText("Not Join");
