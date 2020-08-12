@@ -89,9 +89,11 @@ public class PlayFragment extends Fragment {
     private static final String TAG_MATCHSTATUS = "matchstatus";
     private static final String TAG_MATCHSCHEDULE = "matchschedule";
     private static final String TAG_LOG_ENTDATE = "log_entdate";
+    private static final String TAG_VERIFIED_STATUS = "verified_status";
+    private static final String TAG_CREATED_BY = "added_by";
+    private static final String TAG_PRIZE_LIST = "prize_list";
+    private static final String TAG_TOTAL_TEAM = "total_team";
 
-
-    //matchdetail
     private static final String TAG_TOTALMATCHPLAYED = "totalmatchplayed";
     private static final String TAG_WONAMOUNT = "wonamount";
     private static final String TAG_KILLS = "kills";
@@ -369,6 +371,8 @@ public class PlayFragment extends Fragment {
                         for (int i = 0; i < offersList.size(); i++) {
 
                             Play play = new Play();
+                            play.setCreated_by(offersList.get(i).get(TAG_CREATED_BY));
+                            play.setVerified_status(offersList.get(i).get(TAG_VERIFIED_STATUS));
                             play.setTitle(offersList.get(i).get(TAG_MATCHID));
                             play.setMatchID(offersList.get(i).get(TAG_MATCHID));
                             play.setType(offersList.get(i).get(TAG_TYPE));

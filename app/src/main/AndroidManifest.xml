@@ -18,32 +18,15 @@
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="n">
-<!--        <activity-->
-<!--            android:name=".HomeActivity"-->
-<!--            android:label="@string/title_activity_home_page"-->
-<!--            android:theme="@style/AppTheme.NoActionBar">-->
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-<!--        </activity>-->
 
         <activity android:name=".RazorPay">
-
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
         </activity>
         <activity android:name=".MobileVerifyActivity" />
         <activity android:name=".WithdrawMoneyActivity" />
         <activity android:name=".AppUpdaterActivity" />
         <activity android:name=".TopPlayersActivity" />
         <activity android:name=".MatchResultActivity" />
-        <activity android:name=".SplashScreenActivity">
+        <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -59,7 +42,7 @@
             android:value="http://www.battleworld.in/play/access_token.php" />
         <meta-data
             android:name="com.razorpay.ApiKey"
-            android:value="rzp_test_WsDg8Sc0IgplGT" />
+            android:value="" />
 
         <activity android:name=".LoginActivity" />
         <activity android:name=".MainActivity" />

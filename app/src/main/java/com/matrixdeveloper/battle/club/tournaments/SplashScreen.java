@@ -6,10 +6,8 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 
-import com.matrixdeveloper.battle.club.tournaments.R;
 
-
-public class SplashScreenActivity extends Activity {
+public class SplashScreen extends Activity {
 
     private static final int SPLASH_SHOW_TIME = 1000;
 
@@ -21,7 +19,7 @@ public class SplashScreenActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
-        prf = new PrefManager(SplashScreenActivity.this);
+        prf = new PrefManager(SplashScreen.this);
 
         new BackgroundSplashTask().execute();
 
@@ -56,7 +54,7 @@ public class SplashScreenActivity extends Activity {
             if (isFirstStart) {
 
                 // Launch app intro
-                Intent i = new Intent(SplashScreenActivity.this, LoginActivity.class);
+                Intent i = new Intent(SplashScreen.this, LoginActivity.class);
                 startActivity(i);
 
                 // Make a new preferences editor
@@ -69,12 +67,12 @@ public class SplashScreenActivity extends Activity {
 
                 if(!isSignedin.equalsIgnoreCase("")) {
                     //user signedin
-                    Intent i = new Intent(SplashScreenActivity.this, HomeActivity.class);
+                    Intent i = new Intent(SplashScreen.this, HomeActivity.class);
                     i.putExtra("loaded_info", " ");
                     startActivity(i);
                 } else {
                     //user not signedin
-                    Intent i = new Intent(SplashScreenActivity.this, LoginActivity.class);
+                    Intent i = new Intent(SplashScreen.this, LoginActivity.class);
                     i.putExtra("loaded_info", " ");
                     startActivity(i);
                 }

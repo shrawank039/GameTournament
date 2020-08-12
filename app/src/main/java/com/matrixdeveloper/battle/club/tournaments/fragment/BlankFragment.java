@@ -6,18 +6,34 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.bumptech.glide.request.RequestOptions;
 import com.glide.slider.library.SliderLayout;
 import com.glide.slider.library.slidertypes.TextSliderView;
 import com.google.android.material.tabs.TabLayout;
 import com.matrixdeveloper.battle.club.tournaments.R;
+import com.matrixdeveloper.battle.club.tournaments.config.MySingleton;
+import com.matrixdeveloper.battle.club.tournaments.config.config;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -116,41 +132,8 @@ public class BlankFragment extends Fragment {
         });
 
 
-        SliderLayout mDemoSlider = view.findViewById(R.id.slider);
+        getBannerImage(view);
 
-        ArrayList<String> listUrl = new ArrayList<>();
-        // ArrayList<String> listName = new ArrayList<>();
-
-        listUrl.add("https://lh3.googleusercontent.com/proxy/cmTEHUV6Fryx1xbcCEmfZR05ON9mjxqTRVLBSQ7IobHEVXuDg-AnMDCSfpQkNlKfzW7I_GIjeNhLSucmXJ-ZsU4hNuZbZChmVX4vQ9-C");
-        listUrl.add("https://www.revive-adserver.com/media/GitHub.jpg");
-        listUrl.add("https://www.revive-adserver.com/media/GitHub.jpg");
-        listUrl.add("https://www.revive-adserver.com/media/GitHub.jpg");
-        // listName.add("JPG - Github");
-        // listName.add("PNG - Android Studio");
-
-
-        RequestOptions requestOptions = new RequestOptions();
-        requestOptions.centerCrop();
-        //.diskCacheStrategy(DiskCacheStrategy.NONE)
-        //.placeholder(R.drawable.placeholder)
-        //.error(R.drawable.placeholder);
-
-        for (int i = 0; i < listUrl.size(); i++) {
-            TextSliderView sliderView = new TextSliderView(getContext());
-            // if you want show image only / without description text use DefaultSliderView instead
-
-            // initialize SliderLayout
-            sliderView
-                    .image(listUrl.get(i))
-                    //    .description(listName.get(i))
-                    .setRequestOption(requestOptions)
-                    .setProgressBarVisible(true);
-
-            //add your extra information
-            sliderView.bundle(new Bundle());
-            //  sliderView.getBundle().putString("extra", listName.get(i));
-            mDemoSlider.addSlider(sliderView);
-        }
         // Inflate the layout for this fragment
         return view;
     }
@@ -161,6 +144,63 @@ public class BlankFragment extends Fragment {
         transaction.replace(R.id.frame, fragment);
         transaction.addToBackStack(null);
         transaction.commit();
+    }
+
+    private void getBannerImage(final View view) {
+        JsonObjectRequest jsonObjReq = new JsonObjectRequest(
+                Request.Method.POST, config.bannerImages, null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            final JSONArray jsonArray=response.getJSONArray("data");
+                            ArrayList<String> listUrl = new ArrayList<>();
+                            for(int i=0; i < jsonArray.length(); i++){
+                                listUrl.add(jsonArray.getString(i));
+                            }
+
+                            SliderLayout mDemoSlider = view.findViewById(R.id.slider);
+
+
+                            RequestOptions requestOptions = new RequestOptions();
+                            requestOptions.centerCrop();
+                            //.diskCacheStrategy(DiskCacheStrategy.NONE)
+                            //.placeholder(R.drawable.placeholder)
+                            //.error(R.drawable.placeholder);
+
+                            for (int i = 0; i < listUrl.size(); i++) {
+                                TextSliderView sliderView = new TextSliderView(getContext());
+                                // if you want show image only / without description text use DefaultSliderView instead
+
+                                // initialize SliderLayout
+                                sliderView
+                                        .image(listUrl.get(i))
+                                        //    .description(listName.get(i))
+                                        .setRequestOption(requestOptions)
+                                        .setProgressBarVisible(true);
+
+                                //add your extra information
+                                sliderView.bundle(new Bundle());
+                                //  sliderView.getBundle().putString("extra", listName.get(i));
+                                mDemoSlider.addSlider(sliderView);
+                            }
+                            //  Toast.makeText(getContext(),jsonArray.getString(1), Toast.LENGTH_SHORT).show();
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getContext(),"03 "+error.toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
+        jsonObjReq.setRetryPolicy(new DefaultRetryPolicy(
+                15000,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+        jsonObjReq.setShouldCache(false);
+        MySingleton.getInstance(getContext()).addToRequestQueue(jsonObjReq);
     }
 
 }

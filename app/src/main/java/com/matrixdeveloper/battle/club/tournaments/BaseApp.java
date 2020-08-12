@@ -48,8 +48,6 @@ public abstract class BaseApp extends Application {
         return a;
     }
 
-    public abstract String getPurchaseCode();
-
     public abstract String getEmail();
 
     private NotificationManager notificationManager;
@@ -133,7 +131,6 @@ public abstract class BaseApp extends Application {
             // Building Parameters
             Map<String, String> params = new HashMap<>();
             params.put("packagename", getApplicationContext().getPackageName());
-            params.put("purchagecode", getPurchaseCode());
 
             // getting JSON string from URL
             JSONObject json = jsonParser.makeHttpRequest("http://www.battleworld.in/verify/get_all_app.php", "POST", params);

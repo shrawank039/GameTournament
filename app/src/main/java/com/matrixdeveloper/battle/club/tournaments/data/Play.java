@@ -26,8 +26,26 @@ public class Play {
     private String type;
     private String version;
     private String winPrize;
+    private String created_by;
+    private String verified_status;
 
     public Play() {
+    }
+
+    public String getCreated_by() {
+        return created_by;
+    }
+
+    public String getVerified_status() {
+        return verified_status;
+    }
+
+    public void setCreated_by(String created_by) {
+        this.created_by = created_by;
+    }
+
+    public void setVerified_status(String verified_status) {
+        this.verified_status = verified_status;
     }
 
     public String getTimeDate() {

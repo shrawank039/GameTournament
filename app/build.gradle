@@ -3,7 +3,7 @@ buildscript {
         maven { url 'https://plugins.gradle.org/m2/' }
     }
     dependencies {
-        classpath 'gradle.plugin.com.onesignal:onesignal-gradle-plugin:[0.11.0, 0.99.99]'
+        classpath 'gradle.plugin.com.onesignal:onesignal-gradle-plugin:0.12.8'
     }
 }
 apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
@@ -26,7 +26,7 @@ android {
         applicationId "com.matrixdeveloper.battle.club.tournaments"
 
         // TODO: Please update the OneSignal ID below to yours!
-        manifestPlaceholders = [onesignal_app_id               : 'a6c132b4-c59d-422d-a8d8-cf30b5be55c7',
+        manifestPlaceholders = [onesignal_app_id               : '0c0136aa-b675-46a9-9001-eff88ec2bca4',
                                 // Project number pulled from dashboard, local value is ignored.
                                 onesignal_google_project_number: 'REMOTE']
 

@@ -4,7 +4,7 @@ import com.matrixdeveloper.battle.club.tournaments.BuildConfig;
 
 public class config {
 
-    //   http://159.65.128.120/battleworld/get_all_match.php
+    //   http://159.65.128.120/battleworld/paytm/generateChecksum.php
     public static final String main = "https://matrixdeveloper.com/";
 //    public static String mainurl = "http://www.battleworld.in/play/";
     public static final String mainurl = "https://matrixdeveloper.com/battleworld/";
@@ -13,13 +13,12 @@ public class config {
     public static final String privacypolicy = "https://sites.google.com/view/mohmadprivacypolicy"; //"http://159.65.128.120/?page_id=3";
     public static final String paytmchecksum = mainurl + "paytm/";
     public static final String getOrderID = mainurl +"razorpay.php";
+    public static final String bannerImages = mainurl +"get_banner.php";
 
     public static final String apkupdateurl = "https://matrixdeveloper.com/battleworld/app.apk";
 
     public static final String youtubechannel = "https://www.youtube.com/channel/UCMaEQ1Q9ES5970Br8oWo7jA";
 
-    // Envato codecanyon purchase code
-    public static final String PURCHASE_CODE = BuildConfig.PURCHASE_CODE;
 
     //Payment Gateway
     //Type true to visible
@@ -40,7 +39,7 @@ public class config {
 //    public static String CALLBACK_URL = "https://securegw-stage.paytm.in/theia/paytmCallback?ORDER_ID=";
 
     // Production
-    public static final String MID = "iRpQFD41724377660666";
+    public static final String MID = "xmHOCa32667710380797";
     public static final String WEBSITE = "DEFAULT";
     public static final String INDUSTRY_TYPE_ID = "Retail";
     public static final String CALLBACK_URL = "https://securegw.paytm.in/theia/paytmCallback?ORDER_ID=";

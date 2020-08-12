@@ -56,6 +56,8 @@ public class PlayAdapter extends RecyclerView.Adapter<PlayAdapter.MyViewHolder> 
         final TextView type;
         final TextView status;
         final TextView version;
+        final TextView verify_status;
+        final TextView created_by;
 
         MyViewHolder(View view) {
             super(view);
@@ -72,6 +74,8 @@ public class PlayAdapter extends RecyclerView.Adapter<PlayAdapter.MyViewHolder> 
             materialProgressBar = (MaterialProgressBar) view.findViewById(R.id.progressBar);
             joinBtn = (Button) view.findViewById(R.id.joinButton);
             status = view.findViewById(R.id.match_status);
+            verify_status = view.findViewById(R.id.verified_status);
+            created_by = view.findViewById(R.id.created_by);
             sponsorTextArea = (RelativeLayout) view.findViewById(R.id.sponsorTextArea);
             sponsorText = (TextView) view.findViewById(R.id.sponsorText);
             type = (TextView) view.findViewById(R.id.matchType);
@@ -128,6 +132,9 @@ public class PlayAdapter extends RecyclerView.Adapter<PlayAdapter.MyViewHolder> 
         textView.setText(stringBuilder.toString());
 
         holder.prize.setText(play.getWinPrize());
+        String s = "by: "+play.getCreated_by();
+        holder.created_by.setText(s);
+        holder.verify_status.setText(play.getVerified_status());
         holder.perkill.setText(play.getPerKill());
         String matchType = play.getMatchType();
         if (matchType.equals("Free")) {
@@ -220,6 +227,8 @@ public class PlayAdapter extends RecyclerView.Adapter<PlayAdapter.MyViewHolder> 
             holder.status.setBackgroundResource(R.drawable.rounded_corners_green);
         } else if (Integer.parseInt(play.getJoin_status()) == 1 && totalPeopleJoined < play.getTotalplayer()) {
             holder.joinBtn.setText("Joinned");
+            holder.status.setText("open");
+            holder.status.setBackgroundResource(R.drawable.rounded_corners_green);
             holder.joinBtn.setTextColor(Color.parseColor("#ffffff"));
             holder.joinBtn.setBackgroundResource(R.drawable.buttonbackactive);
         }
